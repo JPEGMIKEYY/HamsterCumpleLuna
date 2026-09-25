@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Para ti ♡</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        #contenido {
+            width: 90vw;
+            max-width: 700px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 45px;
+        }
+
+        #tarjeta {
+            width: 100%;
+            height: auto;
+            animation: respirar 3s ease-in-out infinite;
+        }
+
+        #serial {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: #222;
+            text-align: center;
+        }
+
+        #copiar {
+            margin-top: -25px;
+            padding: 12px 28px;
+            border: 3px solid #222;
+            border-radius: 12px;
+            background: white;
+            color: #222;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.15s ease, background 0.15s ease;
+        }
+
+        #copiar:active {
+            transform: scale(0.95);
+        }
+
+        @keyframes respirar {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.025);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <audio id="musicaTarjeta" autoplay>
+    <source src="assets/regalo.mp3" type="audio/mpeg">
+</audio>
+
+    <div id="contenido">
+
+        <img
+            id="tarjeta"
+            src="assets/tarjeta.png"
+            alt="Tarjeta de cumpleaños"
+        >
+
+        <div id="serial">
+            3PM7-B58C-MJ3P
+        </div>
+
+        <button id="copiar">
+            COPIAR
+        </button>
+
+    </div>
+
+ <script>
+  
+    const musicaTarjeta = document.getElementById("musicaTarjeta");
+    musicaTarjeta.volume = 0.15;
+
+    // Intentar reproducir al entrar
+    musicaTarjeta.play().catch(() => {
+        console.log("El navegador bloqueó el autoplay.");
+    });
+
+    // Si el navegador bloqueó el autoplay,
+    // se reproduce en el primer toque/click.
+    document.addEventListener("click", () => {
+        musicaTarjeta.play();
+    }, { once: true });
+
+
+    const copiar = document.getElementById("copiar");
+
+    copiar.addEventListener("click", async () => {
+
+        await navigator.clipboard.writeText("3PM7-B58C-MJ3P");
+
+        copiar.textContent = "¡COPIADO!";
+
+        setTimeout(() => {
+            copiar.textContent = "COPIAR";
+        }, 2000);
+    });
+</script>
+
+
+</body>
+</html>

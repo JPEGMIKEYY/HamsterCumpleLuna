@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cumpleaños</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- PANTALLA NEGRA INICIAL -->
+    <div id="inicio">
+        <button id="clickOpen">Dale click :P</button>
+        <audio id="musica" preload="auto" loop>
+    <source src="assets/musica.mp3" type="audio/mpeg">
+</audio>
+    </div>
+
+
+    <!-- ESCENA -->
+<div id="escena">
+
+    <!-- HÁMSTER -->
+    <!-- HÁMSTER NORMAL -->
+<img
+    id="hamster"
+    src="assets/hamster.png"
+    alt=""
+>
+
+<!-- HÁMSTER CON LA MANO -->
+<video
+    id="hamsterMano"
+    playsinline
+    muted
+    preload="auto">
+    <source src="assets/hamster-mano.webm" type="video/webm">
+</video>
+<!-- TARJETA EN LA MANO -->
+<img
+    id="tarjetaMano"
+    src="assets/tarjeta-mano.png"
+    alt=""
+>
+
+<!-- TEXTO DE CUMPLEAÑOS -->
+<div id="mensajeCumple">
+    Feliz cumpleaños. Sé que nos conocemos hace poco, pero has hecho que bastantes días complejos sean más apacibles. Te dejo este regalo, algo pequeño, pero espero que lo disfrutes.
+    <br><br>
+    —Mikey
+</div>
+
+<!-- POSE FINAL -->
+<img
+    id="hamsterManoFinal"
+    src="assets/hamster-mano.png"
+    alt=""
+>
+
+    <!-- GLOBOS -->
+    <video
+        id="globos"
+        playsinline
+        muted
+        preload="auto">
+        <source src="assets/globos.webm" type="video/webm">
+    </video>
+
+    <!-- CONFETI -->
+    <video
+        id="confeti"
+        playsinline
+        muted
+        loop
+        preload="auto">
+        <source src="assets/confeti.webm" type="video/webm">
+    </video>
+
+    <!-- PUERTA -->
+    <video
+        id="puerta"
+        playsinline
+        muted
+        preload="auto">
+        <source src="assets/puerta.webm" type="video/webm">
+    </video>
+
+</div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
